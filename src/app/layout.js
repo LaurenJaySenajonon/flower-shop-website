@@ -1,8 +1,22 @@
-import { Playfair_Display, Montserrat, Praise, Great_Vibes, Sacramento, Cormorant_Garamond } from 'next/font/google';
+import {
+  Playfair_Display,
+  Montserrat,
+  Praise,
+  Great_Vibes,
+  Sacramento,
+  Cormorant_Garamond,
+} from 'next/font/google';
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import JsonLd from '../components/JsonLd';
-import { floristJsonLd, metadata, viewport, websiteJsonLd } from '../lib/seo';
+
+import {
+  floristJsonLd,
+  viewport,
+  websiteJsonLd,
+} from '../lib/seo';
+
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -49,57 +63,77 @@ const siteUrl = 'https://monscraft.netlify.app';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+
   title: {
     default: "Mon's Craft | Handcrafted Floral Boutique in Lupon",
     template: "%s | Mon's Craft",
   },
+
   description:
-    "Timeless beauty at budget-friendly prices. Mon's Craft Floral Boutique offers luxury handcrafted flower arrangements, custom bouquets, and gifts in Lupon, Davao Oriental.",
+    "Timeless beauty at budget-friendly prices. Mon's Craft Floral Boutique offers handcrafted flower arrangements, custom bouquets, and gifts in Lupon, Davao Oriental.",
+
   keywords: [
     "Mon's Craft",
-    "monscraft",
-    "Mon Craft",
     "Mon's Craft Floral Boutique",
     "flower shop Lupon",
-    "floral boutique Philippines",
-    "custom flower arrangements",
+    "flower shop Davao Oriental",
+    "flowers in Lupon",
+    "flower arrangements Lupon",
     "handcrafted bouquets Lupon",
     "Davao Oriental florist",
-    "budget friendly flowers",
-    "Hannah Diamond Balquin",
-        "adsafaegfsdfgsdfhgsfdg",
+    "affordable flowers Lupon",
+    "custom flower arrangements",
+    "floral boutique Philippines",
   ],
-  authors: [{ name: "Mon's Craft" }],
+
+  authors: [
+    {
+      name: "Mon's Craft",
+    },
+  ],
+
   creator: "Mon's Craft",
   publisher: "Mon's Craft",
+
+  verification: {
+    google: "-cYz3ZPFgiv8B6Hn5sEe5E-HXz0BmrXp5pNyUg8iLHw",
+  },
+
   alternates: {
     canonical: '/',
   },
+
   openGraph: {
-    title: "Mon's Craft | Floral Boutique",
-    description: "Timeless beauty at budget-friendly prices. Premium handcrafted floral arrangements in Lupon, Philippines.",
+    title: "Mon's Craft | Handcrafted Floral Boutique in Lupon",
+    description:
+      "Discover handcrafted floral arrangements, custom bouquets, and gifts from Mon's Craft in Lupon, Davao Oriental.",
     url: siteUrl,
     siteName: "Mon's Craft",
     locale: 'en_PH',
     type: 'website',
+
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: "Mon's Craft Floral Boutique",
+        alt: "Mon's Craft Floral Boutique in Lupon, Davao Oriental",
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: "Mon's Craft | Floral Boutique",
-    description: "Timeless beauty at budget-friendly prices. Premium handcrafted floral arrangements.",
+    title: "Mon's Craft | Handcrafted Floral Boutique",
+    description:
+      "Handcrafted floral arrangements, custom bouquets, and gifts from Mon's Craft in Lupon, Davao Oriental.",
     images: ['/images/og-image.jpg'],
   },
+
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -110,7 +144,7 @@ export const metadata = {
   },
 };
 
-export { metadata, viewport };
+export { viewport };
 
 export default function RootLayout({ children }) {
   return (
@@ -118,10 +152,19 @@ export default function RootLayout({ children }) {
       <body
         className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} font-sans antialiased text-gray-900 bg-white`}
       >
-        <JsonLd data={websiteJsonLd} />
+        {/* Structured Data - Local Business */}
         <JsonLd data={floristJsonLd} />
+
+        {/* Structured Data - Website */}
+        <JsonLd data={websiteJsonLd} />
+
+        {/* Main Navigation */}
         <Navbar />
-        <main>{children}</main>
+
+        {/* Page Content */}
+        {children}
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>

@@ -1,7 +1,6 @@
-export default function robots() {
-  // Replace with your actual live Netlify URL or custom domain
-  const baseUrl = 'https://monscraft.netlify.app';
+import { SITE_URL } from '../lib/site';
 
+export default function robots() {
   return {
     rules: [
       {
@@ -10,6 +9,6 @@ export default function robots() {
         disallow: ['/api/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

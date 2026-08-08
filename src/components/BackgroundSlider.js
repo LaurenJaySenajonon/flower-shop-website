@@ -39,7 +39,7 @@ export default function BackgroundSlider() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
-              alt={`Floral background ${index + 1}`}
+              alt={`Handcrafted flower arrangement from Mon's Craft in Lupon, Davao Oriental (${index + 1})`}
               className="h-full w-full select-none object-cover object-center"
               loading={index <= 1 ? 'eager' : 'lazy'}
               decoding="async"

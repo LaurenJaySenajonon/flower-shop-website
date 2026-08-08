@@ -108,8 +108,8 @@ export default function Navbar() {
           >
             <span className="text-[#f97316] text-xs sm:text-sm select-none">✨</span>
             <Image
-              src="/images/logo.png"
-              alt="Mon's Craft Logo"
+              src="/images/Logo.png"
+              alt="Mon's Craft Floral Boutique logo"
               width={200}
               height={50}
               priority

@@ -1,31 +1,10 @@
-export default function sitemap() {
-  // Replace with your actual live Netlify URL or custom domain
-  const baseUrl = 'https://monscraft.netlify.app';
+import { PUBLIC_ROUTES, SITE_URL } from '../lib/site';
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/categories`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/reviews`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ];
+export default function sitemap() {
+  return PUBLIC_ROUTES.map(({ path, changeFrequency, priority }) => ({
+    url: path === '/' ? SITE_URL : `${SITE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }));
 }

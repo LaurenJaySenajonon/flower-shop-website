@@ -30,7 +30,7 @@ export default function Footer() {
                 <Link href="/flowers" className="hover:text-blue-400 transition-colors">Our Collection</Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-blue-400 transition-colors">Contact</Link>
+                <Link href="/contact" className="hover:text-blue-400 transition-colors">Contact</Link>
               </li>
             </ul>
           </div>

@@ -25,7 +25,7 @@ const praise = Praise({
   display: 'swap',
 });
 
-// Google Script Font for "hannah" (Replaces local Halimum.ttf)
+// Google Script Font for "hannah"
 const scriptFont = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
@@ -47,7 +47,7 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-// Replace this with your actual Netlify live URL or custom domain
+// Netlify live domain
 const siteUrl = 'https://monscraft.netlify.app';
 
 export const metadata = {
@@ -69,7 +69,7 @@ export const metadata = {
     "handcrafted bouquets Lupon",
     "Davao Oriental florist",
     "budget friendly flowers",
-      "Hannah Diamond Balquin",
+    "Hannah Diamond Balquin",
   ],
   authors: [{ name: "Mon's Craft" }],
   creator: "Mon's Craft",
@@ -118,7 +118,7 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
-  // Google Structured Data (JSON-LD) for Local Business search indexing
+  // Google Structured Data (JSON-LD)
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Florist',

@@ -10,11 +10,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 w-full max-w-6xl mx-auto my-auto">
         <div className="flex flex-col items-center justify-center w-full mt-10 sm:mt-14 md:mt-16">
-          <p
-            className="font-[family-name:var(--font-cormorant)] flex items-center justify-center text-center w-full text-[11px] sm:text-xs md:text-sm lg:text-base text-[#efe9e5] font-semibold tracking-[0.35em] sm:tracking-[0.4em] uppercase mb-6 sm:mb-8 md:mb-18 lg:mb-19 drop-shadow-md pl-[0.35em] sm:pl-[0.4em]">
-            LUPON <span className="text-[#efe9e5] mx-2 sm:mx-3">•</span>{" "}
-            PHILIPPINES
-          </p>
+         
           <h1 className="font-[family-name:var(--font-sacramento)] text-[42px] xs:text-5xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[115px] 2xl:text-[125px] text-white font-bold drop-shadow-lg leading-[1.0] tracking-wide select-none">
             Timeless Beauty 
           </h1>

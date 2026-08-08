@@ -69,6 +69,7 @@ export const metadata = {
     "handcrafted bouquets Lupon",
     "Davao Oriental florist",
     "budget friendly flowers",
+      "Hannah Diamond Balquin",
   ],
   authors: [{ name: "Mon's Craft" }],
   creator: "Mon's Craft",

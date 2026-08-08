@@ -1,10 +1,20 @@
-import { PUBLIC_ROUTES, SITE_URL } from '../lib/site';
-
 export default function sitemap() {
-  return PUBLIC_ROUTES.map(({ path, changeFrequency, priority }) => ({
-    url: path === '/' ? SITE_URL : `${SITE_URL}${path}`,
-    lastModified: new Date(),
-    changeFrequency,
-    priority,
-  }));
+  return [
+    {
+      url: 'https://monscraft.netlify.app',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://monscraft.netlify.app/about',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://monscraft.netlify.app/products',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://monscraft.netlify.app/contact',
+      lastModified: new Date(),
+    },
+  ];
 }

@@ -9,6 +9,7 @@ import {
 } from 'next/font/google';
 
 import Navbar from '../components/Navbar';
+import FeaturesBanner from '../components/FeaturesBanner';
 import Footer from '../components/Footer';
 import JsonLd from '../components/JsonLd';
 
@@ -72,7 +73,7 @@ const siteUrl = 'https://monscraft.netlify.app';
 export const metadata = {
   metadataBase: new URL(siteUrl),
 
-  // 🔹 ADDED TAB LOGO / FAVICON CONFIGURATION
+  // TAB LOGO / FAVICON CONFIGURATION
   icons: {
     icon: '/images/Logo.png',
     shortcut: '/images/Logo.png',
@@ -178,6 +179,9 @@ export default function RootLayout({ children }) {
 
         {/* Page Content */}
         {children}
+
+        {/* Features / Trust Banner */}
+        <FeaturesBanner />
 
         {/* Footer */}
         <Footer />

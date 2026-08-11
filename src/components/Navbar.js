@@ -61,7 +61,7 @@ export default function Navbar() {
       <nav 
         className={`w-full max-w-5xl backdrop-blur-md border rounded-2xl px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center relative transition-all duration-300 ${
           isScrolled 
-            ? 'bg-black/30 border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.35)] scale-[0.99]' 
+            ? 'bg-black/30 border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.35)]' 
             : 'bg-white/10 border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
         }`}
         aria-label="Main Navigation"

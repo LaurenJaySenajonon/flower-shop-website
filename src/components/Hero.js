@@ -18,12 +18,12 @@ export default function Hero() {
           </p>
 
           {/* Main Headline - Cinzel Decorative */}
-          <h1 className="font-[family-name:var(--font-cinzel)] text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[92px] text-white font-bold drop-shadow-lg leading-[1rem] tracking-wide select-none">
+          <h1 className="font-[family-name:var(--font-cinzel)] text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[92px] text-white font-bold drop-shadow-lg leading-[1.25] tracking-wide select-none mt-7">
             Timeless Beauty
           </h1>
 
           {/* Cursive Sub-headline - Sacramento */}
-          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[105px] 2xl:text-[115px] text-[#f97316] font-bold drop-shadow-lg leading-[1rem] tracking-wide select-none">
+          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[105px] 2xl:text-[115px] text-[#f97316] font-bold drop-shadow-lg leading-[1.15] tracking-wide select-none">
             Budget Friendly
           </h2>
         </div>

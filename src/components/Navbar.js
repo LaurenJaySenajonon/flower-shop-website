@@ -59,7 +59,7 @@ export default function Navbar() {
     <header className="fixed top-2.5 xs:top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-2.5 xs:px-4 sm:px-8 transition-all duration-300">
       {/* Floating Glass Container */}
       <nav 
-        className={`w-full max-w-5xl backdrop-blur-md border rounded-2xl px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center relative transition-all duration-300 ${
+        className={`w-full max-w-5xl backdrop-blur-md border rounded-2xl px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 lg:py-3.5 flex justify-between items-center relative transition-all duration-300 ${
           isScrolled 
             ? 'bg-black/30 border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.35)]' 
             : 'bg-white/10 border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'

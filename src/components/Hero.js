@@ -3,8 +3,6 @@
 import BackgroundSlider from "./BackgroundSlider";
 import ContactButton from "./ContactButton";
 
-
-
 export default function Hero() {
   return (
     <section className="relative min-h-dvh w-full flex flex-col items-center justify-center overflow-hidden py-16 sm:py-20 md:py-24">
@@ -17,14 +15,13 @@ export default function Hero() {
             PHILIPPINES
           </p>
 
-          <h1 className="font-[family-name:var(--font-cinzel)] text-[26px] xs:text-[38px] sm:text-[38px] md:text-[50px] lg:text-[62px] xl:text-[86px] 2xl:text-[82px] text-white font-bold drop-shadow-lg leading-[1.25] tracking-wide select-none mt-7">
+          <h1 className="font-[family-name:var(--font-cinzel)] text-[26px] xs:text-[38px] sm:text-[38px] md:text-[50px] lg:text-[62px] xl:text-[86px] 2xl:text-[82px] text-white font-bold drop-shadow-lg leading-[1.25] lg:leading-[1.1] tracking-wide select-none mt-7">
             Timeless Beauty
           </h1>
-          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-[38px] xs:text-[50px] sm:text-[50px] md:text-[62px] lg:text-[86px] xl:text-[95px] 2xl:text-[105px] text-[#f97316] font-bold drop-shadow-lg leading-[1.15] tracking-wide select-none">
+          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-2 text-[38px] xs:text-[50px] sm:text-[50px] md:text-[62px] lg:text-[86px] xl:text-[95px] 2xl:text-[105px] text-[#f97316] font-bold drop-shadow-lg leading-[1.15] lg:leading-[1.05] tracking-wide select-none">
             Budget Friendly
           </h2>
         </div>
-
 
         <div className="mt-8 sm:mt-10 md:mt-12 relative inline-block">
           <button

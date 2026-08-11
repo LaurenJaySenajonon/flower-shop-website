@@ -13,17 +13,17 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 w-full max-w-6xl mx-auto my-auto">
         <div className="flex flex-col items-center justify-center w-full">
           {/* Subtitle / Location Tag */}
-          <p className="font-[family-name:var(--font-cormorant)] flex items-center justify-center text-center w-full text-[11px] sm:text-xs md:text-sm lg:text-base text-[#efe9e5] font-semibold tracking-[0.35em] sm:tracking-[0.4em] uppercase mb-4 sm:mb-6 md:mb-8 drop-shadow-md pl-[0.35em] sm:pl-[0.4em]">
+          <p className="font-[family-name:var(--font-cormorant)] flex items-center justify-center text-center w-full text-[2vw] sm:text-xs md:text-sm lg:text-base text-[#efe9e5] font-semibold tracking-[0.35em] sm:tracking-[0.4em] uppercase mb-4 sm:mb-6 md:mb-8 drop-shadow-md pl-[0.35em] sm:pl-[0.4em]">
             LUPON <span className="text-[#efe9e5] mx-2 sm:mx-3">•</span> PHILIPPINES
           </p>
 
           {/* Main Headline - Cinzel Decorative */}
-          <h1 className="font-[family-name:var(--font-cinzel)] text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[92px] text-white font-bold drop-shadow-lg leading-[1.25] tracking-wide select-none mt-7">
+          <h1 className="font-[family-name:var(--font-cinzel)] text-[5.5vw] xs:text-[6vw] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[92px] text-white font-bold drop-shadow-lg leading-[1.25] tracking-wide select-none mt-7">
             Timeless Beauty
           </h1>
 
           {/* Cursive Sub-headline - Sacramento */}
-          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[105px] 2xl:text-[115px] text-[#f97316] font-bold drop-shadow-lg leading-[1.15] tracking-wide select-none">
+          <h2 className="font-[family-name:var(--font-sacramento)] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-[7.5vw] xs:text-[8vw] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[105px] 2xl:text-[115px] text-[#f97316] font-bold drop-shadow-lg leading-[1.15] tracking-wide select-none">
             Budget Friendly
           </h2>
         </div>

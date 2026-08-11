@@ -44,7 +44,7 @@ export default function Navbar() {
 
   // Split Navigation Links
   const leftLinks = [
-    { name: 'HOME', path: '/', badge: 4 },
+    { name: 'HOME', path: '/' },
     { name: 'ABOUT US', path: '/about' },
   ];
 
@@ -57,7 +57,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-2.5 xs:top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-2.5 xs:px-4 sm:px-8 transition-all duration-300">
-      {/* Floating Glass Container - Reduced radius to rounded-2xl */}
+      {/* Floating Glass Container */}
       <nav 
         className={`w-full max-w-5xl backdrop-blur-md border rounded-2xl px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center relative transition-all duration-300 ${
           isScrolled 
@@ -67,17 +67,17 @@ export default function Navbar() {
         aria-label="Main Navigation"
       >
         {/* Left Desktop Links */}
-        <ul className={`hidden lg:flex items-center space-x-1 xl:space-x-2 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
+        <ul className={`hidden lg:flex items-center space-x-4 xl:space-x-6 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
           {leftLinks.map((link) => {
             const isActive = pathname === link.path;
             return (
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  className={`px-3 xl:px-3.5 py-1 rounded-full transition-all duration-300 flex items-center gap-1.5 select-none whitespace-nowrap ${
+                  className={`relative py-1 px-1 transition-colors duration-300 flex items-center gap-1.5 select-none whitespace-nowrap after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f97316] after:transition-all after:duration-300 ${
                     isActive
-                      ? 'bg-[#f97316] text-white shadow-md shadow-orange-500/30'
-                      : 'text-white/90 hover:text-white hover:bg-[#f97316]/25'
+                      ? 'text-white after:w-full'
+                      : 'text-white/80 hover:text-white after:w-0 hover:after:w-full'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -86,7 +86,7 @@ export default function Navbar() {
                     <span 
                       className={`w-4 h-4 rounded-full text-[10px] font-sans font-bold flex items-center justify-center transition-colors ${
                         isActive 
-                          ? 'bg-white text-[#f97316]' 
+                          ? 'bg-[#f97316] text-white' 
                           : 'bg-white/20 text-white'
                       }`}
                     >
@@ -121,17 +121,17 @@ export default function Navbar() {
         </div>
 
         {/* Right Desktop Links */}
-        <ul className={`hidden lg:flex items-center space-x-1 xl:space-x-2 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
+        <ul className={`hidden lg:flex items-center space-x-4 xl:space-x-6 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
           {rightLinks.map((link) => {
             const isActive = pathname === link.path;
             return (
               <li key={link.name}>
                 <Link
                   href={link.path}
-                  className={`px-3 xl:px-3.5 py-1 rounded-full transition-all duration-300 flex items-center gap-1.5 select-none whitespace-nowrap ${
+                  className={`relative py-1 px-1 transition-colors duration-300 flex items-center gap-1.5 select-none whitespace-nowrap after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-[#f97316] after:transition-all after:duration-300 ${
                     isActive
-                      ? 'bg-[#f97316] text-white shadow-md shadow-orange-500/30'
-                      : 'text-white/90 hover:text-white hover:bg-[#f97316]/25'
+                      ? 'text-white after:w-full'
+                      : 'text-white/80 hover:text-white after:w-0 hover:after:w-full'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -140,7 +140,7 @@ export default function Navbar() {
                     <span 
                       className={`w-4 h-4 rounded-full text-[10px] font-sans font-bold flex items-center justify-center transition-colors ${
                         isActive 
-                          ? 'bg-white text-[#f97316]' 
+                          ? 'bg-[#f97316] text-white' 
                           : 'bg-white/20 text-white'
                       }`}
                     >
@@ -153,7 +153,7 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile Hamburger Button - Cleaned up without background circle or border */}
+        {/* Mobile Hamburger Button */}
         <button 
           type="button"
           className="lg:hidden text-white hover:text-[#f97316] z-50 focus:outline-none ml-auto p-1.5 active:scale-95 transition-colors duration-200 flex items-center justify-center"

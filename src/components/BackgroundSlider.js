@@ -29,15 +29,17 @@ export default function BackgroundSlider() {
   };
 
   return (
-    <div className="absolute inset-0 z-0 min-h-full overflow-hidden bg-blue-900">
+    <div className="absolute inset-0 z-0 min-h-full overflow-hidden bg-slate-950">
       {images.map((src, index) => {
         const isActive = index === currentIndex;
 
         return (
           <div
             key={src}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? 'z-10 opacity-100' : 'pointer-events-none z-0 opacity-0'
+            className={`absolute inset-0 transition-all duration-[1400ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${
+              isActive
+                ? 'z-10 opacity-100 scale-100'
+                : 'pointer-events-none z-0 opacity-0 scale-105'
             }`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -54,7 +56,7 @@ export default function BackgroundSlider() {
 
       {/* Visual overlays */}
       <div
-        className="pointer-events-none absolute inset-0 z-10 bg-linear-to-b from-blue-300/30 to-white/15"
+        className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-blue-300/30 to-white/15"
         aria-hidden="true"
       />
       <div
@@ -76,8 +78,8 @@ export default function BackgroundSlider() {
           </svg>
         </button>
 
-        {/* Counter (X / Y) in Dark Blue */}
-        <span className="`font-sans` text-sm sm:text-base font-bold text-[#0a192f] tracking-widest whitespace-nowrap drop-shadow-md">
+        {/* Counter (X / Y) */}
+        <span className="font-sans text-xs sm:text-sm text-[#e2e2e2] tracking-widest whitespace-nowrap drop-shadow-md">
           {currentIndex + 1} / {images.length}
         </span>
 

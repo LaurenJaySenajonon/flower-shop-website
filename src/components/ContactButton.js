@@ -16,10 +16,10 @@ export default function ContactButton() {
 
   return (
     <>
-      {/* Floating Pill Button - Matched right offset with Navbar horizontal padding */}
+      {/* Floating Pill Button - Added slow, weightless floating animation */}
       <button
         onClick={() => setIsModalOpen(true)}
-        className="fixed bottom-6 right-2.5 xs:right-4 sm:right-8 sm:bottom-8 z-40 bg-[#0f172a]/85 backdrop-blur-md text-white border border-white/20 rounded-full p-1.5 pr-5 sm:pr-6 flex items-center gap-2.5 sm:gap-3 shadow-2xl hover:scale-105 hover:border-orange-500/50 hover:shadow-orange-500/20 transition-all duration-300 group"
+        className="fixed bottom-6 right-2.5 xs:right-4 sm:right-8 sm:bottom-8 z-40 bg-[#0f172a]/85 backdrop-blur-md text-white border border-white/20 rounded-full p-1.5 pr-5 sm:pr-6 flex items-center gap-2.5 sm:gap-3 shadow-2xl hover:scale-105 hover:border-orange-500/50 hover:shadow-orange-500/20 transition-all duration-300 group animate-[bounce_3.5s_infinite]"
         aria-label="Open contact information"
       >
         {/* Orange Circular Phone Icon */}

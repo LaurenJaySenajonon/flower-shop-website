@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="text-white font-sans font-bold tracking-widest text-2xl">
-              LOGO
+         
             </Link>
             <p className="text-sm leading-relaxed text-gray-400 mt-4">
               Premium handcrafted flower arrangements for birthdays, anniversaries, weddings, and every special occasion. 

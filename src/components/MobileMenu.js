@@ -81,9 +81,9 @@ export default function MobileMenu({ isOpen, links, onClose, closeMenu }) {
         aria-label="Close menu"
       />
 
-      {/* Floating Glass Drawer */}
+      {/* Floating Glass Drawer - Reduced height with auto-fit and max height caps */}
       <div
-        className={`fixed inset-y-3 right-3 flex h-[calc(100dvh-1.5rem)] w-[calc(100vw-3.5rem)] max-w-[18rem] flex-col rounded-3xl bg-slate-950/90 text-white backdrop-blur-2xl border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform-gpu will-change-transform ${
+        className={`fixed top-3 right-3 flex h-auto max-h-[75dvh] w-[calc(100vw-3.5rem)] max-w-[18rem] flex-col rounded-3xl bg-slate-950/90 text-white backdrop-blur-2xl border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform-gpu will-change-transform ${
           isVisible 
             ? 'translate-x-0 opacity-100 scale-100' 
             : 'translate-x-[115%] opacity-0 scale-95'
@@ -93,7 +93,7 @@ export default function MobileMenu({ isOpen, links, onClose, closeMenu }) {
         aria-label="Mobile navigation"
       >
         {/* Header Bar */}
-        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+        <div className="flex items-center justify-between border-b border-white/10 px-5 py-3.5">
           <div className="flex items-center space-x-1 sm:space-x-1.5">
             <span className="text-[#f97316] text-xs select-none">✨</span>
             <Image
@@ -121,8 +121,8 @@ export default function MobileMenu({ isOpen, links, onClose, closeMenu }) {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-1 overflow-y-auto px-4 py-5" aria-label="Mobile">
-          <ul className="flex flex-col gap-2">
+        <nav className="flex-1 overflow-y-auto px-4 py-3" aria-label="Mobile">
+          <ul className="flex flex-col gap-1.5">
             {links.map((link, index) => {
               const isActive = pathname === link.path;
 
@@ -141,7 +141,7 @@ export default function MobileMenu({ isOpen, links, onClose, closeMenu }) {
                   <Link
                     href={link.path}
                     onClick={handleClose}
-                    className="group font-[family-name:var(--font-cormorant)] flex items-center justify-between px-3 py-2.5 text-base font-semibold tracking-wide transition-colors duration-200"
+                    className="group font-[family-name:var(--font-cormorant)] flex items-center justify-between px-3 py-2 text-base font-semibold tracking-wide transition-colors duration-200"
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {/* Underline attached precisely to the word text width */}
@@ -172,7 +172,7 @@ export default function MobileMenu({ isOpen, links, onClose, closeMenu }) {
         </nav>
 
         {/* Footer Subtitle */}
-        <div className="border-t border-white/10 px-5 py-4">
+        <div className="border-t border-white/10 px-5 py-3">
           <p className="font-[family-name:var(--font-cormorant)] text-[11px] uppercase tracking-[0.2em] text-white/50">
             Lupon • Philippines
           </p>

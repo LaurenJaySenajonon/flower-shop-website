@@ -5,6 +5,7 @@ import {
   Great_Vibes,
   Sacramento,
   Cormorant_Garamond,
+  Cinzel_Decorative,
 } from 'next/font/google';
 
 import Navbar from '../components/Navbar';
@@ -56,6 +57,14 @@ const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['500', '600', '700'],
   variable: '--font-cormorant',
+  display: 'swap',
+});
+
+// Added Cinzel Decorative
+const cinzel = Cinzel_Decorative({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-cinzel',
   display: 'swap',
 });
 
@@ -150,7 +159,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} ${cinzel.variable} font-sans antialiased text-gray-900 bg-white`}
       >
         {/* Structured Data - Local Business */}
         <JsonLd data={floristJsonLd} />

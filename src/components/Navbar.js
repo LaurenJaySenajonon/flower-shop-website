@@ -49,7 +49,7 @@ export default function Navbar() {
   ];
 
   const rightLinks = [
-    { name: 'CATEGORIES', path: '/categories' },
+    { name: 'CATEGORIES', path: '/flowers' },
     { name: 'REVIEWS', path: '/reviews' },
   ];
 

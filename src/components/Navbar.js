@@ -57,16 +57,16 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-2.5 xs:top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-2.5 xs:px-4 sm:px-8 transition-all duration-300">
-      {/* Glass Transparent Floating Capsule Container */}
+      {/* Floating Glass Container - Reduced radius to rounded-2xl */}
       <nav 
-        className={`w-full max-w-5xl backdrop-blur-md border rounded-full px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center relative transition-all duration-300 ${
+        className={`w-full max-w-5xl backdrop-blur-md border rounded-2xl px-3 xs:px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center relative transition-all duration-300 ${
           isScrolled 
             ? 'bg-black/30 border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.35)] scale-[0.99]' 
             : 'bg-white/10 border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'
         }`}
         aria-label="Main Navigation"
       >
-        {/* Left Desktop Links (Reduced Font Size) */}
+        {/* Left Desktop Links */}
         <ul className={`hidden lg:flex items-center space-x-1 xl:space-x-2 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
           {leftLinks.map((link) => {
             const isActive = pathname === link.path;
@@ -120,7 +120,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Right Desktop Links (Reduced Font Size) */}
+        {/* Right Desktop Links */}
         <ul className={`hidden lg:flex items-center space-x-1 xl:space-x-2 ${cormorant.className} text-sm xl:text-base font-semibold tracking-wide`}>
           {rightLinks.map((link) => {
             const isActive = pathname === link.path;
@@ -153,16 +153,16 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile View Hamburger Button */}
+        {/* Mobile Hamburger Button - Cleaned up without background circle or border */}
         <button 
           type="button"
-          className="lg:hidden text-white z-50 focus:outline-none ml-auto p-2 rounded-full bg-white/10 hover:bg-[#f97316] border border-white/15 active:scale-95 transition-all duration-300 shadow-sm flex items-center justify-center"
+          className="lg:hidden text-white hover:text-[#f97316] z-50 focus:outline-none ml-auto p-1.5 active:scale-95 transition-colors duration-200 flex items-center justify-center"
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open mobile menu"
           aria-expanded={isMobileMenuOpen}
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
 

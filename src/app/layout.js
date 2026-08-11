@@ -60,7 +60,6 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 });
 
-// Added Cinzel Decorative
 const cinzel = Cinzel_Decorative({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -72,6 +71,13 @@ const siteUrl = 'https://monscraft.netlify.app';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+
+  // 🔹 ADDED TAB LOGO / FAVICON CONFIGURATION
+  icons: {
+    icon: '/images/Logo.png',
+    shortcut: '/images/Logo.png',
+    apple: '/images/Logo.png',
+  },
 
   title: {
     default: "Mon's Craft | Handcrafted Floral Boutique in Lupon",

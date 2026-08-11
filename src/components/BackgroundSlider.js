@@ -54,7 +54,7 @@ export default function BackgroundSlider() {
 
       {/* Visual overlays */}
       <div
-        className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-blue-300/30 to-white/15"
+        className="pointer-events-none absolute inset-0 z-10 bg-linear-to-b from-blue-300/30 to-white/15"
         aria-hidden="true"
       />
       <div
@@ -77,7 +77,7 @@ export default function BackgroundSlider() {
         </button>
 
         {/* Counter (X / Y) in Dark Blue */}
-        <span className="font-[family-name:var(--font-sans)] text-sm sm:text-base font-bold text-[#0a192f] tracking-widest whitespace-nowrap drop-shadow-md">
+        <span className="`font-sans` text-sm sm:text-base font-bold text-[#0a192f] tracking-widest whitespace-nowrap drop-shadow-md">
           {currentIndex + 1} / {images.length}
         </span>
 

@@ -67,15 +67,17 @@ export default function ShopByCategory() {
             </div>
           </ScrollReveal>
 
+          {/* Carousel Navigation Buttons (Matching Review Page Style) */}
           <ScrollReveal variant="slide-right" className="hidden sm:block">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               <button
                 onClick={() => scroll("left")}
-                className="w-10 h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-[#f97316] hover:border-[#f97316] transition-all duration-300"
+                type="button"
+                className="w-9 h-9 rounded-none border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-[#f97316] hover:border-[#f97316] transition-all duration-300 cursor-pointer"
                 aria-label="Previous categories"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -90,11 +92,12 @@ export default function ShopByCategory() {
               </button>
               <button
                 onClick={() => scroll("right")}
-                className="w-10 h-10 rounded-full border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-[#f97316] hover:border-[#f97316] transition-all duration-300"
+                type="button"
+                className="w-9 h-9 rounded-none border border-white/20 bg-white/5 text-white flex items-center justify-center hover:bg-[#f97316] hover:border-[#f97316] transition-all duration-300 cursor-pointer"
                 aria-label="Next categories"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

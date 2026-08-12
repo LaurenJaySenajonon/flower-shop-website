@@ -42,15 +42,16 @@ export default function Navbar() {
     { name: "HOME", path: "/" },
     { name: "ABOUT US", path: "/about" },
   ];
-const rightLinks = [
-  { name: "CATEGORIES", path: "/#ShopByCategory" },
-  { name: "REVIEWS", path: "/reviews" },
-];
+  const rightLinks = [
+    { name: "CATEGORIES", path: "/#ShopByCategory" },
+    { name: "FAQ", path: "/" },
+  ];
   const allLinks = [...leftLinks, ...rightLinks];
   return (
     <header className="fixed top-4 sm:top-6 lg:top-8 left-0 right-0 z-50 flex justify-center px-4 sm:px-8 transition-all duration-700 ease-in-out">
       <nav
-        className={`w-full max-w-6xl backdrop-blur-xl rounded-full px-5 sm:px-8 py-2.5 sm:py-3 lg:py-4 flex justify-between items-center relative transition-all duration-700 ease-out ${
+        /* Changed rounded-full to rounded-2xl */
+        className={`w-full max-w-6xl backdrop-blur-xl rounded-2xl px-5 sm:px-8 py-2.5 sm:py-3 lg:py-4 flex justify-between items-center relative transition-all duration-700 ease-out ${
           isScrolled
             ? "bg-black/60 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.6)]"
             : "bg-black/10 border border-white/5 shadow-[0_4px_20px_rgba(0,0,0,0.1)]"
@@ -95,7 +96,7 @@ const rightLinks = [
             );
           })}
         </ul>
-      
+
         <div className="flex items-center z-40 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
           <Link
             href="/"
@@ -161,17 +162,17 @@ const rightLinks = [
           aria-expanded={isMobileMenuOpen}
         >
           <svg
-            className="w-7 h-7"
+            className="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             viewBox="0 0 24 24"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path d="M4 6h16" />
+            <path d="M4 12h16" />
+            <path d="M9 18h11" />
           </svg>
         </button>
 

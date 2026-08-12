@@ -12,11 +12,14 @@ import {
 import Navbar from '../components/Navbar';
 import FeaturesBanner from '../components/FeaturesBanner';
 import ShopByCategory from '../components/ShopByCategory';
+import CustomerReviews from '../components/CustomerReviews'; // Updated import path
 import Footer from '../components/Footer';
 import JsonLd from '../components/JsonLd';
 import ContactButton from '../components/ContactButton';
 import SmoothScroll from '../components/SmoothScroll';
 import UnderDevelopmentModal from '../components/UnderDevelopmentModal';
+import Preloader from '../components/Preloader';
+
 
 import {
   floristJsonLd,
@@ -176,12 +179,14 @@ export { viewport };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+  <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} ${cinzel.variable} ${cantora.variable} font-[family-name:var(--font-cantora)] antialiased text-gray-900 bg-white`}
       >
+           <Preloader />
         <SmoothScroll>
           <UnderDevelopmentModal />
+       
           {/* Structured Data - Local Business */}
           <JsonLd data={floristJsonLd} />
 
@@ -199,7 +204,7 @@ export default function RootLayout({ children }) {
           <FeaturesBanner />
           <ShopByCategory />
           <ContactButton />
-
+          <CustomerReviews/>
           {/* Footer */}
           <Footer />
         </SmoothScroll>

@@ -6,12 +6,17 @@ import {
   Sacramento,
   Cormorant_Garamond,
   Cinzel_Decorative,
+  Cantora_One,
 } from 'next/font/google';
 
 import Navbar from '../components/Navbar';
 import FeaturesBanner from '../components/FeaturesBanner';
+import ShopByCategory from '../components/ShopByCategory';
 import Footer from '../components/Footer';
 import JsonLd from '../components/JsonLd';
+import ContactButton from '../components/ContactButton';
+import SmoothScroll from '../components/SmoothScroll';
+import UnderDevelopmentModal from '../components/UnderDevelopmentModal';
 
 import {
   floristJsonLd,
@@ -20,6 +25,13 @@ import {
 } from '../lib/seo';
 
 import './globals.css';
+
+const cantora = Cantora_One({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-cantora',
+  display: 'swap',
+});
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -164,27 +176,33 @@ export { viewport };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} ${cinzel.variable} font-sans antialiased text-gray-900 bg-white`}
+        className={`${playfair.variable} ${scriptFont.variable} ${montserrat.variable} ${praise.variable} ${sacramento.variable} ${cormorant.variable} ${cinzel.variable} ${cantora.variable} font-[family-name:var(--font-cantora)] antialiased text-gray-900 bg-white`}
       >
-        {/* Structured Data - Local Business */}
-        <JsonLd data={floristJsonLd} />
+        <SmoothScroll>
+          <UnderDevelopmentModal />
+          {/* Structured Data - Local Business */}
+          <JsonLd data={floristJsonLd} />
 
-        {/* Structured Data - Website */}
-        <JsonLd data={websiteJsonLd} />
+          {/* Structured Data - Website */}
+          <JsonLd data={websiteJsonLd} />
 
-        {/* Main Navigation */}
-        <Navbar />
+          {/* Main Navigation */}
+          <Navbar />
+          
 
-        {/* Page Content */}
-        {children}
+          {/* Page Content */}
+          {children}
 
-        {/* Features / Trust Banner */}
-        <FeaturesBanner />
+          {/* Features / Trust Banner */}
+          <FeaturesBanner />
+          <ShopByCategory />
+          <ContactButton />
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

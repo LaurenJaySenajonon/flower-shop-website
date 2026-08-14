@@ -1,44 +1,202 @@
 @import "tailwindcss";
 
+/* 👇 ADD THIS LINE FOR TAILWIND V4 MANUAL DARK MODE 👇 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==================================================
+   MON'S CRAFT THEME
+================================================== */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf7f1;
+  --foreground: #241e1a;
+
+  --surface: #ffffff;
+  --surface-soft: #f3eee7;
+  --section-soft: #f8f4ee;
+
+  --brand: #643610;
+  --brand-dark: #3f210c;
+  --brand-muted: rgba(100, 54, 16, 0.6);
+  --brand-border: rgba(100, 54, 16, 0.25);
+
+  --muted: #6b513e;
+  --muted-foreground: #332a23;
+
+  --border: rgba(100, 54, 16, 0.12);
+  --card: #ffffff;
+
+  --accent-warm: #d4a373;
+  --accent-warm-light: #e4bd91;
+
+  --banner-bg: #0f172a;
+  --banner-surface: rgba(11, 19, 41, 0.9);
+}
+
+html.dark {
+  --background: #181411;
+  --foreground: #f7f1e9;
+
+  --surface: #241e1a;
+  --surface-soft: #2d241e;
+  --section-soft: #1f1915;
+
+  --brand: #d4a373;
+  --brand-dark: #e4bd91;
+  --brand-muted: rgba(212, 163, 115, 0.65);
+  --brand-border: rgba(212, 163, 115, 0.25);
+
+  --muted: #b8aa9c;
+  --muted-foreground: #d8cec2;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --card: #241e1a;
+
+  --accent-warm: #d4a373;
+  --accent-warm-light: #e4bd91;
+
+  --banner-bg: #181411;
+  --banner-surface: rgba(36, 30, 26, 0.92);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   --font-script: var(--font-script);
-  --font-praise: var(--font-praise); /* Added Praise font mapping */
+  --font-praise: var(--font-praise);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ==================================================
+   BASE
+================================================== */
+
+html {
+  background: var(--background);
+  color-scheme: light;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  transition:
+    background-color 300ms ease,
+    color 300ms ease;
 }
 
+/* ==================================================
+   THEME UTILITY CLASSES
+================================================== */
+
 @layer utilities {
+  .theme-bg {
+    background-color: var(--background);
+  }
+
+  .theme-text {
+    color: var(--foreground);
+  }
+
+  .theme-surface {
+    background-color: var(--surface);
+  }
+
+  .theme-surface-soft {
+    background-color: var(--surface-soft);
+  }
+
+  .theme-section-soft {
+    background-color: var(--section-soft);
+  }
+
+  .theme-card {
+    background-color: var(--card);
+  }
+
+  .theme-border {
+    border-color: var(--border);
+  }
+
+  .theme-brand {
+    color: var(--brand);
+  }
+
+  .theme-brand-bg {
+    background-color: var(--brand);
+  }
+
+  .theme-brand-muted {
+    color: var(--brand-muted);
+  }
+
+  .theme-muted {
+    color: var(--muted);
+  }
+
   .text-shadow-light {
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
   }
-  
+
   .text-stroke-white {
     -webkit-text-stroke: 1.5px white;
   }
 
-  /* Added Blue Stroke Utility */
   .text-stroke-blue {
-    -webkit-text-stroke: 2px #3b82f6; /* Adjust color hex to match your preferred blue */
+    -webkit-text-stroke: 2px #3b82f6;
+  }
+}
+
+/* ==================================================
+   MONSCRAFT — CONTINUOUS INFINITE GALLERY
+================================================== */
+
+.gallery-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  animation: monscraft-gallery-scroll 40s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  user-select: none;
+}
+
+@keyframes monscraft-gallery-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.gallery-item {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-item img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track {
+    animation: none;
   }
 }

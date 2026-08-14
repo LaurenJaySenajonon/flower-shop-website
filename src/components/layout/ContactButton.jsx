@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Cormorant } from 'next/font/google';
-import ContactModal from './ContactModal';
+import ContactModal from '../ui/ContactModal';
 
 // Cormorant font matching your navbar
 const cormorant = Cormorant({

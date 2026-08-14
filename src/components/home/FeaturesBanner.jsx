@@ -48,7 +48,7 @@ const features = [
 
 export default function FeaturesBanner() {
   return (
-    <section className="w-full bg-[#0f172a] py-8 sm:py-10 px-4 sm:px-8 relative overflow-hidden select-none">
+    <section className="w-full bg-[var(--banner-bg)] py-8 sm:py-10 px-4 sm:px-8 relative overflow-hidden select-none">
       {/* Subtle Background Glow Accent */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f97316]/5 to-transparent pointer-events-none" />
 

@@ -1,4 +1,4 @@
-import JsonLd from '../../components/JsonLd';
+import JsonLd from '../../components/seo/JsonLd';
 import { absoluteUrl, SITE_FULL_NAME } from '../../lib/site';
 
 export const metadata = {

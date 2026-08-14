@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import ScrollReveal from '@/components/ScrollReveal';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const testimonials = [
   {
@@ -93,7 +93,7 @@ export default function CustomerReviews() {
   };
 
   return (
-    <section className="relative w-full bg-[#0f172a] py-20 sm:py-28 overflow-hidden select-none">
+    <section className="relative w-full bg-[var(--banner-bg)] py-20 sm:py-28 overflow-hidden select-none">
       {/* Luminous Ambient Glow Accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#f97316]/12 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f97316]/5 to-transparent pointer-events-none" />

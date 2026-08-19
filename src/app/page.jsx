@@ -1,10 +1,12 @@
-import Hero from '../components/home/Hero';
+import Hero from "../components/home/Hero";
 import GallerySection from "@/components/home/GallerySection";
-import ShopByCategory from '../components/home/ShopByCategory';
+import ShopByCategory from "../components/home/ShopByCategory";
 import ServicesSection from "@/components/home/ServicesSection";
 import BestSeller from "@/components/home/BestSellers";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_URL } from '../lib/site';
+import Testimonials from "@/components/home/TestimonialsSection";
+
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_URL } from "../lib/site";
 
 export const metadata = {
   title: {
@@ -12,7 +14,7 @@ export const metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
     title: DEFAULT_TITLE,
@@ -25,11 +27,12 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <Hero />
-            < GallerySection />
-                      <ShopByCategory />
-            <ServicesSection/>
-            <BestSeller/>
-            <WhyChooseUs/>
+      <GallerySection />
+      <ShopByCategory />
+      <ServicesSection />
+      <BestSeller />
+      <WhyChooseUs />
+      <Testimonials />
     </div>
   );
 }

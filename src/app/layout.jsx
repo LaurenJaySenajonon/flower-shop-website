@@ -1,42 +1,33 @@
 import {
-  Playfair_Display,
-  Montserrat,
-  Praise,
-  Great_Vibes,
-  Sacramento,
-  Cormorant_Garamond,
-  Cinzel_Decorative,
   Cantora_One,
+  Cinzel_Decorative,
+  Cormorant_Garamond,
+  Great_Vibes,
+  Montserrat,
+  Playfair_Display,
+  Praise,
+  Sacramento,
 } from "next/font/google";
 
-import Navbar from "../components/layout/Navbar";
-import FeaturesBanner from "../components/home/FeaturesBanner";
-import CustomerReviews from "../components/layout/CustomerReviews";
-import Footer from "../components/home/Footer";
-import JsonLd from "../components/seo/JsonLd";
-import ContactButton from "../components/layout/ContactButton";
-import SmoothScroll from "../components/utilities/SmoothScroll";
-import UnderDevelopmentModal from "../components/utilities/UnderDevelopmentModal";
-import Preloader from "../components/ui/Preloader";
+import ContactButton from "@/components/layout/ContactButton";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/home/Footer";
+import JsonLd from "@/components/seo/JsonLd";
+import Preloader from "@/components/ui/Preloader";
+import SmoothScroll from "@/components/utilities/SmoothScroll";
+import UnderDevelopmentModal from "@/components/utilities/UnderDevelopmentModal";
 
 import {
   floristJsonLd,
   viewport,
   websiteJsonLd,
-} from "../lib/seo";
+} from "@/lib/seo";
 
 import "./globals.css";
 
 /* ==================================================
    FONTS
 ================================================== */
-
-const cantora = Cantora_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-cantora",
-  display: "swap",
-});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -57,7 +48,7 @@ const praise = Praise({
   display: "swap",
 });
 
-const scriptFont = Great_Vibes({
+const greatVibes = Great_Vibes({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-script",
@@ -65,8 +56,8 @@ const scriptFont = Great_Vibes({
 });
 
 const sacramento = Sacramento({
-  subsets: ["latin"],
   weight: "400",
+  subsets: ["latin"],
   variable: "--font-sacramento",
   display: "swap",
 });
@@ -85,8 +76,15 @@ const cinzel = Cinzel_Decorative({
   display: "swap",
 });
 
+const cantora = Cantora_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-cantora",
+  display: "swap",
+});
+
 /* ==================================================
-   SITE URL
+   SITE CONFIGURATION
 ================================================== */
 
 const siteUrl = "https://monscraft.netlify.app";
@@ -97,12 +95,6 @@ const siteUrl = "https://monscraft.netlify.app";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-
-  icons: {
-    icon: "/images/Logo.png",
-    shortcut: "/images/Logo.png",
-    apple: "/images/Logo.png",
-  },
 
   title: {
     default: "Mon's Craft | Handcrafted Floral Boutique in Lupon",
@@ -134,6 +126,12 @@ export const metadata = {
 
   creator: "Mon's Craft",
   publisher: "Mon's Craft",
+
+  icons: {
+    icon: "/images/Logo.png",
+    shortcut: "/images/Logo.png",
+    apple: "/images/Logo.png",
+  },
 
   verification: {
     google: "-cYz3ZPFgiv8B6Hn5sEe5E-HXz0BmrXp5pNyUg8iLHw",
@@ -191,101 +189,47 @@ export { viewport };
 ================================================== */
 
 export default function RootLayout({ children }) {
+  const fontVariables = [
+    playfair.variable,
+    greatVibes.variable,
+    montserrat.variable,
+    praise.variable,
+    sacramento.variable,
+    cormorant.variable,
+    cinzel.variable,
+    cantora.variable,
+  ].join(" ");
+
   return (
     <html
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        {/* ==================================================
-            THEME INITIALIZER
-
-            Runs before the page becomes visible.
-            Prevents light/dark flash on refresh.
-        ================================================== */}
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  var theme = localStorage.getItem("monscraft-theme");
-
-                  if (theme === "dark") {
-                    document.documentElement.classList.add("dark");
-                  } else {
-                    document.documentElement.classList.remove("dark");
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
-
       <body
         className={`
-          ${playfair.variable}
-          ${scriptFont.variable}
-          ${montserrat.variable}
-          ${praise.variable}
-          ${sacramento.variable}
-          ${cormorant.variable}
-          ${cinzel.variable}
-          ${cantora.variable}
-
+          ${fontVariables}
           font-[family-name:var(--font-sans)]
           antialiased
-
           bg-[var(--background)]
           text-[var(--foreground)]
-
           transition-colors
           duration-500
         `}
       >
-        {/* ==================================================
-            PRELOADER
-        ================================================== */}
-
         <Preloader />
 
         <SmoothScroll>
-          {/* ==================================================
-              DEVELOPMENT MODAL
-          ================================================== */}
-
           <UnderDevelopmentModal />
-
-          {/* ==================================================
-              STRUCTURED DATA
-          ================================================== */}
 
           <JsonLd data={floristJsonLd} />
           <JsonLd data={websiteJsonLd} />
 
-          {/* ==================================================
-              NAVIGATION
-          ================================================== */}
-
           <Navbar />
-
-          {/* ==================================================
-              PAGE CONTENT
-          ================================================== */}
 
           {children}
 
-          {/* ==================================================
-              GLOBAL SECTIONS
-          ================================================== */}
-
-          <FeaturesBanner />
-
           <ContactButton />
-
-          <CustomerReviews />
 
           <Footer />
         </SmoothScroll>

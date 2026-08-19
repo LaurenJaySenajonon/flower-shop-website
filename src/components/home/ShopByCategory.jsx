@@ -8,25 +8,25 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 const categories = [
   {
     id: 1,
-    name: "TULIPS",
-    image: "/images/Tulips/1.png",
-    href: "/categories/tulips",
+    name: "HOMEMADE FLOWER BOQUETS",
+    image: "/images/Prod. Category/1.png",
+    href: "/flowers",
   },
   {
     id: 2,
-    name: "DAHLIA",
-    image: "/images/Dahlia/1.png",
+    name: "BUTTON PIN",
+    image: "/images/Prod. Category/2.png",
     href: "/categories/dahlia",
   },
   {
     id: 3,
-    name: "ROSE",
-    image: "/images/Rose/1.png",
+    name: "CROCHET",
+    image: "/images/Prod. Category/3.png",
     href: "/categories/rose",
   },
   {
     id: 4,
-    name: "LILIES",
+    name: "STICKERS",
     image: "/images/Liliies/1.png",
     href: "/categories/lilies",
   },
@@ -265,10 +265,7 @@ export default function ShopByCategory() {
                 xl:min-w-[calc(33.333%-16px)]
               "
             >
-              <ScrollReveal
-                variant="zoom-in"
-                delay={index * 0.1}
-              >
+              <ScrollReveal variant="zoom-in" delay={index * 0.1}>
                 <div className="group block">
                   {/* ==================================================
                       IMAGE CONTAINER
@@ -328,77 +325,65 @@ export default function ShopByCategory() {
                       CATEGORY INFORMATION
                   ================================================== */}
 
-                  <div
-                    className="
-                      mt-3
-                      flex
-                      items-center
-                      justify-between
-                      sm:mt-4
-                    "
-                  >
-                    <div>
-                      {/* CATEGORY NAME */}
-                      <h3
-                        className="
-                          font-[family-name:var(--font-serif)]
-                          text-[15px]
-                          font-medium
-                          leading-none
-                          tracking-[-0.01em]
-                          theme-brand
-                          transition-colors
-                          duration-300
-                          sm:text-[17px]
-                          md:text-[18px]
-                          lg:text-[19px]
-                        "
-                      >
-                        {category.name}
-                      </h3>
+                  {/* ==================================================
+    CATEGORY INFORMATION
+================================================== */}
 
-                      {/* SUBTLE LABEL */}
-                      <span
-                        className="
-                          mt-1.5
-                          block
-                          font-[family-name:var(--font-montserrat)]
-                          text-[8px]
-                          font-medium
-                          uppercase
-                          tracking-[0.22em]
-                          theme-brand-muted
-                          sm:mt-2
-                          sm:text-[9px]
-                          md:text-[10px]
-                        "
-                      >
-                        EXPLORE NOW
-                      </span>
-                    </div>
+                  <div className="mt-3 sm:mt-4">
+                    {/* CATEGORY NAME */}
+                    <h3
+                      className="
+                      font-[family-name:var(--font-serif)]
+                      text-[15px]
+                      font-medium
+                      leading-none
+                      tracking-[-0.01em]
+                      theme-brand
+                      transition-colors
+                      duration-300
+                      sm:text-[17px]
+                      md:text-[18px]
+                      lg:text-[19px]
+    "
+                    >
+                      {category.name}
+                    </h3>
 
-                    {/* INTERACTIVE ARROW */}
+                    {/* EXPLORE LINK */}
                     <Link
                       href={category.href}
                       aria-label={`Explore ${category.name}`}
                       className="
-                        group/arrow
-                        flex
-                        shrink-0
-                        items-center
-                        theme-brand
-                      "
+                      group/explore
+                      mt-2
+                      inline-flex
+                      items-center
+                      gap-2
+                      font-[family-name:var(--font-montserrat)]
+                      text-[8px]
+                      font-medium
+                      uppercase
+                      tracking-[0.22em]
+                      theme-brand-muted
+                      transition-colors
+                      duration-300
+                      sm:text-[9px]
+                      md:text-[10px]
+    "
                     >
+                      <span>EXPLORE NOW</span>
+
                       <svg
                         className="
-                          h-4
-                          w-8
-                          theme-brand
-                          transition-transform
-                          duration-500
-                          group-hover:translate-x-1
-                          md:w-10
-                        "
+                            h-3
+                            w-7
+                            theme-brand
+                            transition-transform
+                            duration-500
+                            group-hover/explore:translate-x-1
+                            sm:h-4
+                            sm:w-8
+                          "
                         viewBox="0 0 40 12"
                         fill="none"
                         aria-hidden="true"
@@ -409,6 +394,7 @@ export default function ShopByCategory() {
                           strokeWidth="1.2"
                           strokeLinecap="round"
                         />
+
                         <path
                           d="M31 1L36 6L31 11"
                           stroke="currentColor"

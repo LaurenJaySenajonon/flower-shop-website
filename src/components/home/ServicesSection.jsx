@@ -402,11 +402,10 @@ export default function ServicesSection() {
                 <h2
                   className="
                     mt-2
-                    font-[family-name:var(--font-serif)]
                     text-[36px]
                     font-medium
                     leading-[0.9]
-                    tracking-[-0.025em]
+                   tracking-tight
                     text-[#faf7f1]
                     sm:text-[44px]
                     md:text-[48px]
@@ -423,7 +422,7 @@ export default function ServicesSection() {
               <div className="mt-auto">
                 <p
                   className="
-                    font-[family-name:var(--font-sacramento)]
+                    ont-(family-name:--font-sacramento)
                     text-[32px]
                     leading-none
                     text-white/80
@@ -438,7 +437,7 @@ export default function ServicesSection() {
                   className="
                     mt-4
                     max-w-[280px]
-                    font-[family-name:var(--font-montserrat)]
+                    font-(family-name:--font-montserrat)
                     text-[7px]
                     font-medium
                     uppercase
@@ -474,5 +473,5 @@ export default function ServicesSection() {
         </div>
       </div>
     </section>
-  );
+);
 }
